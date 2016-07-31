@@ -23,5 +23,5 @@ class WeatherParser:
             sunset = datetime.datetime.utcfromtimestamp(self.weather['sys']['sunset']).strftime('%H:%M:%S')
             station_name = self.weather['name']
 
-            print ("Station Name: %s\n%s\nDescription: %s\nSunrise: %s\nSunset: %s\nTemp: %.2fc\nMin Temp: %.2fc\nMax Temp: %.2fc\nPressure: %.2fhPa\nHumidity: %.2f%%\nClouds: %.2f%%\nWind Speed: %.2fmph\nWind Deg: %s\n"
+            print ("\nStation Name: %s\n%s\nDescription: %s\nSunrise: %s\nSunset: %s\nTemp: %.2fc\nMin Temp: %.2fc\nMax Temp: %.2fc\nPressure: %.2fhPa\nHumidity: %.2f%%\nClouds: %.2f%%\nWind Speed: %.2fmph\nWind Deg: %s"
                     % (station_name, timestamp, desc, sunrise, sunset, temp, temp_min, temp_max, pressure, humidity, clouds, wind_speed, wind_deg))

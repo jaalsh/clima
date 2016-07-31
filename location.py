@@ -2,13 +2,14 @@ import weatherparser, weathermath
 
 class Location:
 
-        def __init__(self, name, lat, lng, altitude, weather, forecast):
+        def __init__(self, name, lat, lng, altitude, weather, forecast, stations):
             self.name = name
             self.lat = lat
             self.lng = lng
             self.altitude = altitude
             self.weather = weather
             self.forecast = forecast
+            self.stations = stations
 
         def display(self):
             station_location = weatherparser.WeatherParser(self.weather).parse_location()

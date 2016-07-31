@@ -1,5 +1,6 @@
 import weathermath, datetime
 
+#TODO: re-write using for item in forecast loops... possibly remove creation of lists and iterate through each item?
 class ForecastParser:
 
     def __init__(self, forecast, count):
@@ -47,5 +48,5 @@ class ForecastParser:
             wind_speed = weathermath.ms_to_mph(self.wind_speeds[i])
             wind_deg = weathermath.deg_to_cardinal(self.wind_degs[i])
 
-            print ("%s\nDescription: %s\nTemp: %.2fc\nMin Temp: %.2fc\nMax Temp: %.2fc\nPressure: %.2fhPa\nHumidity: %.2f%%\nClouds: %.2f%%\nWind Speed: %.2fmph\nWind Deg: %s\n"
+            print ("\n%s\nDescription: %s\nTemp: %.2fc\nMin Temp: %.2fc\nMax Temp: %.2fc\nPressure: %.2fhPa\nHumidity: %.2f%%\nClouds: %.2f%%\nWind Speed: %.2fmph\nWind Deg: %s"
                     % (timestamp, desc, temp, temp_min, temp_max, pressure, humidity, clouds, wind_speed, wind_deg))
