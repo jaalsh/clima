@@ -26,8 +26,12 @@ def weather_query():
 def forecast_query():
     if read_input("\nWould you like to display the 12h forecast?[Y/n]"):
         forecastparser.ForecastParser(loc.forecast, 4).display()
-    if read_input("\nWould you like to display the full forecast?[Y/n]"):
-        forecastparser.ForecastParser(loc.forecast, 100).display()
+        if read_input("\nWould you like to save this forecast in a file?[Y/n]"):
+            fileutils.write_forecast_to_file(loc, 4)
+    if read_input("\nWould you like to display the 5 day forecast?[Y/n]"):
+        forecastparser.ForecastParser(loc.forecast, 40).display()
+        if read_input("\nWould you like to save this forecast in a file?[Y/n]"):
+            fileutils.write_forecast_to_file(loc, 40)
 
 def stations_query():
     if read_input("\nWould you like to get the weather from the nearest sations?[Y/n]"):
